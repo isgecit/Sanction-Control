@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RequestClosed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestClosedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestClosedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestInspected">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestInspectedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestInspectedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPendingRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPendingRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendPendingRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestClosedSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestClosed" />
+  </wsdl:message>
+  <wsdl:message name="RequestClosedSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestClosedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestInspectedSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestInspected" />
+  </wsdl:message>
+  <wsdl:message name="RequestInspectedSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestInspectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendPendingRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SendPendingRequest" />
+  </wsdl:message>
+  <wsdl:message name="SendPendingRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SendPendingRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PendingInspectionsSoap">
+    <wsdl:operation name="RequestClosed">
+      <wsdl:input message="tns:RequestClosedSoapIn" />
+      <wsdl:output message="tns:RequestClosedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestInspected">
+      <wsdl:input message="tns:RequestInspectedSoapIn" />
+      <wsdl:output message="tns:RequestInspectedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPendingRequest">
+      <wsdl:input message="tns:SendPendingRequestSoapIn" />
+      <wsdl:output message="tns:SendPendingRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PendingInspectionsSoap" type="tns:PendingInspectionsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestClosed">
+      <soap:operation soapAction="http://tempuri.org/RequestClosed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestInspected">
+      <soap:operation soapAction="http://tempuri.org/RequestInspected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPendingRequest">
+      <soap:operation soapAction="http://tempuri.org/SendPendingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PendingInspectionsSoap12" type="tns:PendingInspectionsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestClosed">
+      <soap12:operation soapAction="http://tempuri.org/RequestClosed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestInspected">
+      <soap12:operation soapAction="http://tempuri.org/RequestInspected" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPendingRequest">
+      <soap12:operation soapAction="http://tempuri.org/SendPendingRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PendingInspections">
+    <wsdl:port name="PendingInspectionsSoap" binding="tns:PendingInspectionsSoap">
+      <soap:address location="http://192.9.200.150/WebQcm1/PendingInspections.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PendingInspectionsSoap12" binding="tns:PendingInspectionsSoap12">
+      <soap12:address location="http://192.9.200.150/WebQcm1/PendingInspections.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
